@@ -229,3 +229,8 @@ Grant Select on Coleccion_usuario to Devs;
 Grant Select on ratingjuegos to Devs;
 Grant Select,insert,update on desarrolladorjuegos to Devs;
 
+Create Role Pubs;
+Grant Select on Juegos to Pubs;
+Grant Select on Coleccion_usuario to Pubs;
+Grant Select on ratingjuegos to Pubs;
+Grant Select,insert,update on publicadorjuegos to Pubs;
