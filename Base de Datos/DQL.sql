@@ -17,8 +17,8 @@ inner JOIN ratingjuegos on juegos.id=ratingjuegos.id;
 
 --Consulta ordenando ascendentemente los juegos. SQL BAsico
 select * from juegos order by precio ASC;
---
-Consulta con inner joins para determinar juegos de cierta categoria, publicador o desarrollador. SQL Intermedio
+
+--Consulta con inner joins para determinar juegos de cierta categoria, publicador o desarrollador. SQL Intermedio
 Select juegos.id,juegos.nombre,juegos.precio,juegos.fecha_salida,juegos.descripcion,categoria_juegos.categoria
 from juegos inner join categoria_juegos on juegos.id=categoria_juegos.id_juego
 where categoria_juegos.categoria='Horror';
@@ -78,7 +78,7 @@ SELECT *from Categoria_juegos WHERE categoria='Horror';
 
 -- Creacion de vista para ver juegos con un rating de 4
 
-CREATE VIEW vista1 AS SELECT * from Colleccion_usuario WHERE Rating_ind=4
+CREATE VIEW vista1 AS SELECT * from Coleccion_usuario WHERE Rating_ind=4
 
 
 
