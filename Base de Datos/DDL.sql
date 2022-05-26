@@ -215,3 +215,17 @@ CREATE trigger plusrating
 after INSERT on juegos
 for each ROW
 execute FUNCTION ratingadd();
+
+--Roles
+Create Role cust;
+Grant Select on Juegos to cust;
+Grant Select on Coleccion_usuario to cust;
+Grant Select on ratingjuegos to cust;
+Grant Update (rating_ind) on coleccion_usuario to cust;
+
+Create Role Devs;
+Grant Select on Juegos to Devs;
+Grant Select on Coleccion_usuario to Devs;
+Grant Select on ratingjuegos to Devs;
+Grant Select,insert,update on desarrolladorjuegos to Devs;
+
