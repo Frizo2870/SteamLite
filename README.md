@@ -6,7 +6,9 @@ En este proyecto realizado en su gran mayoria en PostgreSQL buscamos realizar un
 
 Para utilizar el proyecto y sus funcionalidades realize los siguientes pasos:
 1. Crear una nueva base de datos en postgreSQL y abrir la herramienta de queries.
-2. Copiar y pegar los contenidos del archivo DDL que contiene la estructura de tablas y los triggers necesarios
+
+Advertencia: Al ejecutar el ddl asegurarse que no existan roles con los nombres "pubs", "Devs", "cust"
+3. Copiar y pegar los contenidos del archivo DDL que contiene la estructura de tablas y los triggers necesarios
 para el funcionamiento de Steamlite. Ejecutar el codigo.
 3. Copiar y Pegar los contenidos del archivo DML pues son los datos de Clientes, juegos y demas. Ejecutar el
 codigo.
