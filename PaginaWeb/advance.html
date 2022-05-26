@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>SteamLite</title>
+	<body style="background-color:#FFFFFE;">
+	<style>
+	*{
+	margin:0;
+	padding:0;
+	}
+	header{
+	height:60px;
+	background:#262626;
+	padding:0 50px;
+
+	}
+	.logo{
+	width:30%;
+	float:left;
+	color:#fff;
+	font-weight:bold;
+	text-transform:uppercase;
+	line-height:60px;
+	font-size:35px;
+	font-family:sans-serif;
+	}
+	nav{
+	width:68%;
+	float:right;
+	}
+	nav ul{
+	list-style:none;
+	float:right;
+	}
+	nav ul li{
+	display: inline-block;
+	}
+	nav ul li a{
+	text-decoration: none;
+	color:#fff;
+	font-family:sans-serif;
+	font-weight:bold;
+	margin:0 10px;
+	line-height:60px;
+	text-transform:uppercase;
+	}
+.pointer {
+  width: 700px;
+  height: 40px;
+  position: relative;
+  background: #FFD803;
+}
+.pointer:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 0;
+  border-left: 20px solid white;
+  border-top: 20px solid transparent;
+  border-bottom: 20px solid transparent;
+}
+.pointer:before {
+  content: "";
+  position: absolute;
+  right: -20px;
+  bottom: 0;
+  width: 0;
+  height: 0;
+  border-left: 20px solid #FFD803;
+  border-top: 20px solid transparent;
+  border-bottom: 20px solid transparent;
+}
+	}
+	.banner{
+	height:100%;
+	}
+	.banner img{
+	width:100%;
+	height:90vh;
+	}
+	.content{
+	padding:5%;
+	}
+	.content p{
+	font-size:18px;
+	line-height:1.7;
+	font-family:sans-serif;
+	margin-bottom:25px;
+	}
+	footer{
+	background:#000;
+	color:#fff;
+	padding:15px 50px;
+	text-align:center;
+	}
+	   
+	   
+	   @media (max-width: 600px){        
+
+	header {
+	 width: 100%;
+	 height: 100%;
+	 padding: 0;
+	 text-align: center;
+	}
+	.logo {
+	 width: 100%;
+	 float: none;
+	}
+	nav {
+	 width: 100%;
+	 float: none;
+	}
+	nav ul li {
+	 display: block;
+	}
+	nav ul {
+	 float: none;
+	}
+	   }    
+
+	.caja1 {
+  border: 10px solid #3EC483;
+  background: #5DEAA8;
+  width: 100%;
+  height: auto;
+  padding: 10px;
+  margin: 10px;
+}
+
+
+	.caja2 {
+  border: 10px solid #FFD803;
+  background: #FEF6E4;
+  width: 100%;
+  height: auto;
+  padding: 10px;
+  margin: 10px;
+}
+	.caja3 {
+  border: 10px solid #8BD3DD;
+  background: #F3D2C1;
+  width: 100%;
+  height: auto;
+  padding: 10px;
+  margin: 10px;
+}
+	</style>
+</head>
+<body>
+	<header>
+		<div class="logo">
+			SteamLite
+		</div>
+		<nav>
+			<ul>
+				<li>
+					<a href="Pagina_Datos.html">Home</a>
+				</li>
+				<li>
+					<a href="About.html">About</a>
+				</li>
+				<li>
+					<a href="Basic.html">Basic</a>
+				</li>
+				<li>
+					<a href="Intermediate.html">Intermediate</a>
+				</li>
+				<li>
+					<a href="Advance.html">Advance</a>
+				</li>
+			</ul>
+		</nav>
+	</header>
+	<div class="banner"><img alt="" src="advance.jpg"></div>
+	<br> <br>
+	<div class="pointer" align="center">
+		<h1>Advance_Concepts:</h1>
+	</div>
+	<div class="content">
+		<p>En esta ultima seccion vera tematicas relacionadas con lo que es el SQL avanzado y haciendo uso del aplicativo de PostgreSQL veremos lo que son disipadores, mas conocidos como TRIGGERS los cuales nos sirven para realizar una accion despues de haber manipulado los datos de la base de datos. Y por ultimo veremos lo que son las transacciones.</p>
+	<div class="caja1">
+		<h1>TRIGGERS :</h1>
+		<p>Los TRIGGERS consisten en una serie de reglas predefinidas que se asocian a una tabla. En donde estas reglas se aplican a la base de datos cuando se realizan determinadas operaciones en la tabla, por ejemplo, al añadir, actualizar o eliminar registros.</p>
+		<p>En el siguiente ejemplo buscaremos actualizar un rating a un juego:</p>
+<p>CREATE trigger uprating</p>
+<p>after update of rating_ind on coleccion_usuario</p>
+<p>for each ROW</p>
+<p>execute FUNCTION average_rating();</p>
+		<p>El cual sera el disipador que llamara a una funcion despues de actualizar el rating_ind de la coleccion del usuario.</p>
+		<p>Create FUNCTION average_rating()
+<p>returns TRIGGER</p>
+<p>LANGUAGE'plpgsql'</p>
+<p>as $$</p>
+<p>declare</p>
+<p>av INTEGER;</p>
+<p>BEGIN</p>
+<p>Select avg(rating_ind) Into av from coleccion_usuario where coleccion_usuario.id_juego=new.id_juego;</p>
+ 
+	</div>
+
+
+	<div class="caja2">
+		<h1>Transacciones:</h1>
+		<p>Las transacciones en SQL son secuencias de trabajo que son realizadas de forma ordenada y separada en una base de datos. Normalmente representan cualquier cambio en la base de datos, y tienen dos objetivos principales. El primer objetivo es proporcionar secuencias de trabajo fiables que permitan poder recuperarse fácilmente ante errorres y mantener una base de datos consistente incluso frente a fallos del sistema. Como segundo objetivo tenemos que proporciona aislamiento entre programas accediendo a la vez a la base de datos.</p>
+		<p>Las transacciones tienen que cumplir con 4 propiedades y tres comandos de control:</p>
+		<h2>Atomicidad:</h2>
+		<p>En la atomicidad es en donde se aseguran que todas las operaciones dentro de la secuencia de trabajo se completen satisfactoriamente. Y si esto no llega a ser asi, la transacción se abandona en el punto del error y las operaciones previas retroceden a su estado inicial.</p>
+		<h2>Consistencia</h2>
+		<p>Se aseguran que la base de datos cambie estados en una transacción exitosa.</p>
+		<h2>Aislamiento</h2>
+		<p>Permiten que las operaciones sean aisladas y transparentes unas de otras.</p>
+		<h2>Durabilidad:</h2>
+		<p>Una vez obtenido el resultado o efecto de una transacción completada este se busca que este permanezca en caso de error del sistema.</p>
+		<h2>Comandos de control:</h2>
+		<p>Existen tres comandos para ejecutar las transacciones COMMIT:para guardar los datos, ROLLBACK: para abortar la transaccion y SAVEPOINT:que puntos concretos en la transacción donde poder deshacer la transacción hasta esos puntos.</p>
+		
+	</div>
+
+	</div>
+	<footer>
+		<p>All Right Reserved By SteamLite</p>
+	</footer>
+</body>
+</html>

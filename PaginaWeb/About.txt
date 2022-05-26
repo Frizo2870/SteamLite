@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>SteamLite</title>
+	<body style="background-color:#FFFFFE;">
+	<style>
+
+	*{
+	margin:0;
+	padding:0;
+	}
+	header{
+	height:60px;
+	background:#262626;
+	padding:0 50px;
+
+	}
+	.logo{
+	width:30%;
+	float:left;
+	color:#fff;
+	font-weight:bold;
+	text-transform:uppercase;
+	line-height:60px;
+	font-size:35px;
+	font-family:sans-serif;
+	}
+	nav{
+	width:68%;
+	float:right;
+	}
+	nav ul{
+	list-style:none;
+	float:right;
+	}
+	nav ul li{
+	display: inline-block;
+	}
+	nav ul li a{
+	text-decoration: none;
+	color:#fff;
+	font-family:sans-serif;
+	font-weight:bold;
+	margin:0 10px;
+	line-height:60px;
+	text-transform:uppercase;
+	}
+	
+.pointer {
+  width: 700px;
+  height: 40px;
+  position: relative;
+  background: #FFD803;
+}
+.pointer:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 0;
+  border-left: 20px solid white;
+  border-top: 20px solid transparent;
+  border-bottom: 20px solid transparent;
+}
+.pointer:before {
+  content: "";
+  position: absolute;
+  right: -20px;
+  bottom: 0;
+  width: 0;
+  height: 0;
+  border-left: 20px solid #FFD803;
+  border-top: 20px solid transparent;
+  border-bottom: 20px solid transparent;
+}
+
+
+
+
+	.scanner h1{
+	background:#000000;
+	color:#FFFFFF;
+	textAlign: center;
+	}
+	
+
+    
+	.banner{
+	height:100%;
+	}
+	.banner img{
+	width:100%;
+	height:90vh;
+	}
+	.content{
+	padding:5%;
+	}
+	.content p{
+	font-size:18px;
+	line-height:1.7;
+	font-family:sans-serif;
+	margin-bottom:25px;
+	}
+	footer{
+	background:#000;
+	color:#fff;
+	padding:15px 50px;
+	text-align:center;
+	}
+	   
+	   
+	   @media (max-width: 600px){        
+
+	header {
+	 width: 100%;
+	 height: 100%;
+	 padding: 0;
+	 text-align: center;
+	}
+	.logo {
+	 width: 100%;
+	 float: none;
+	}
+	nav {
+	 width: 100%;
+	 float: none;
+	}
+	nav ul li {
+	 display: block;
+	}
+	nav ul {
+	 float: none;
+	}
+	   }    
+
+	.content .imagen img{
+
+  width: 100%;
+  height: auto;
+
+	}
+
+	.cuadro{
+  border: 10px solid #3EC483;
+  background: #5DEAA8;
+  width: 100%;
+  height: auto;
+  padding: 10px;
+  margin: 10px;
+	}
+	</style>
+</head>
+<body>
+	<header>
+		<div class="logo">
+			SteamLite
+		</div>
+		<nav>
+			<ul>
+				<li>
+					<a href="Pagina_Datos.html">Home</a>
+				</li>
+				<li>
+					<a href="About.html">About</a>
+				</li>
+				<li>
+					<a href="Basic.html">Basic</a>
+				</li>
+				<li>
+					<a href="Intermediate.html">Intermediate</a>
+				</li>
+				<li>
+					<a href="Advance.html">Advance</a>
+				</li>
+			</ul>
+		</nav>
+	</header>
+	<div class="banner"><img alt="" src="about.jpg"></div>
+	<br> <br>
+	<div class="pointer" align="center">
+		<h1>Estructura_De_La_Base_De_Datos:</h1>
+	</div>
+	<div class="content">
+		<p>En esta seccion se dara a entender como esta planteada la base de datos de SteamLite, por lo que con el siguiente diagrama esperamos que el usuario pueda entender de manera sencilla la manera en como esta estructurada. Esto con el fin de que le sea mas facil de entender como es que estan organizadas las operacion  ejecutadas en PostgresSQL dentro de las categorias asignadas. </p>
+		<p>El siguiente diagrama muestra como esta esquematizada la base de datos, siguiendo la relacion que puede existir entre la base de datos,  si esta hace que las demas tablas dependen entre si bajo una relacion de uno a uno, o de muchos a muchos.Tambien se muestra los atributos que componen a las tablas, y con esto aparte de dar a entender como esta compuesta, muestra el tipo de dato al que corresponde y tambien muestra si es una llave foranea, o si contrario, es una llave foranea</p>
+		<div class="imagen"><img src="diagrama.png" ></div>
+		<p>Tambien quisiera mostrar un modelo E/R para mostrar la relacion que tienen las tablas y como es que llegan a ser estas, donde se podra ver si la relacion es opcional, o si no, si la tabla es debil o si la relacion entre ellas es obligatoria y depende de uno a uno de uno a muchos o de muchos a muchos</p>
+		<div class="imagen"><img src="Modelo ER.png" ></div>
+	</div>
+
+	<div class="pointer" align="center">
+		<h1>Datos_Del_Sistema:</h1>
+	</div>
+	<div class="content">
+		<p>En el siguiente link podra encontrar los datos que componen a todas las presentadas en la grafica anterior.Los datos estan emulados por medio del aplicativo Mockaroo, esto devido a que no pudimos obtener una base de datos de manera directa de la pagina de Steam; Por lo que procuramos emular los datos tomando variantes de diversos generos (como colores, nombres de animales, empresas,etc.) y asi poder tener una idea similar a la que jugarian los datos reales en la base de datos. </p>
+		<p>El archivo esta compuesto de manera que pueda encontrar de manera sencilla los archivos en relacion a los que necesitan en relacion a las tablas con las cuales puedan llegar a estar relacionadas.</p>
+		<p>Tambien quisieramos agregar los archivos DQL y DML esto con el fin de que se pueda obtener la creacion de la base de datos y las consultas que se van a estudiar dentro de esta pagina</p>
+		<a title="descarga" href="https://www.mediafire.com/file/jw5bxilbloicjsn/download.zip/file"><img src="mediafire.jfif" alt="descarga" /></a>
+	</div>
+	<div class="pointer" align="center">
+		<h1>PostgreSQL:</h1>
+	</div>
+	<div class="content">
+		<p>Como habra encontrado en la portada el trabajo elaborado en PostreSQL esta dividido en tres seciones.Por lo que en esta parte encontrara como esta compuesta, con las tematicas que avarca y asi poder mostrar en concreto las tematicas que se van a tocar en cada seccion. </p>
+		<p>En cada seccion podra encontrar una explicacion de lo que se trato de elaborar </p>
+		
+		<div class="cuadro"> 
+		<h1><a href="Basic.html">BASIC:</a></h1>
+		<p>En la seccion BASIC podra encontrar los conocimientos mas basicos acerca de la herramienta PostgreSQL, en donde se le mostrara como hacer selecciones simples, condicionales, operaciones entre conjuntos aplicados a las consultas que se estan elaborando y por ultimo pasara por vistas y por subconsultas.</p>
+		</div>
+
+		<div class="cuadro">
+		<h1><a href="Intermediate.html">INTERMEDIATE:</a></h1>
+		<p>Mostraremos lo que son los distintos tipos de JOINS junto con algunos ejemplos explicativos y mostrando la esctructura de cada uno de estos.Ademas tambien pensamos en mostrar lo que son las funciones y procedimientos que podremos encontrar dentro del aplicativo de PostgreSQL.</p>
+		</div>
+		
+		<div class="cuadro">
+		<h1><a href="Advance.html">ADVANCE:</a></h1>
+		<p>En la seccion avanzado se veran lo que son disipadores, por lo que volveremos a ver un poco de funciones pero aplicados a estos. Y por ultimo tocaremos el tema de las transacciones.</p>
+		</div>
+	</div>
+	<footer>
+		<p>All Right Reserved By SteamLite</p>
+	</footer>
+</body>
+</html>

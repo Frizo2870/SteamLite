@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>SteamLite</title>
+	<body style="background-color:#FFFFFE;">
+	<style>
+	*{
+	margin:0;
+	padding:0;
+	}
+	header{
+	height:60px;
+	background:#262626;
+	padding:0 50px;
+	}
+	.logo{
+	width:30%;
+	float:left;
+	color:#fff;
+	font-weight:bold;
+	text-transform:uppercase;
+	line-height:60px;
+	font-size:35px;
+	font-family:sans-serif;
+	}
+	nav{
+	width:68%;
+	float:right;
+	}
+	nav ul{
+	list-style:none;
+	float:right;
+	}
+	nav ul li{
+	display: inline-block;
+	}
+	nav ul li a{
+	text-decoration: none;
+	color:#fff;
+	font-family:sans-serif;
+	font-weight:bold;
+	margin:0 10px;
+	line-height:60px;
+	text-transform:uppercase;
+	}
+.pointer {
+  width: 700px;
+  height: 40px;
+  position: relative;
+  background: #FFD803;
+}
+.pointer:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 0;
+  border-left: 20px solid white;
+  border-top: 20px solid transparent;
+  border-bottom: 20px solid transparent;
+}
+.pointer:before {
+  content: "";
+  position: absolute;
+  right: -20px;
+  bottom: 0;
+  width: 0;
+  height: 0;
+  border-left: 20px solid #FFD803;
+  border-top: 20px solid transparent;
+  border-bottom: 20px solid transparent;
+}
+	}
+	.banner{
+	height:100%;
+	}
+	.banner img{
+	width:100%;
+	height:90vh;
+	}
+	.content{
+	padding:5%;
+	}
+	.content p{
+	font-size:18px;
+	line-height:1.7;
+	font-family:sans-serif;
+	margin-bottom:25px;
+	}
+	.content center{
+	font-size:18px;
+	line-height:1.7;
+	font-family:sans-serif;
+	margin-bottom:25px;
+	}
+	footer{
+	background:#000;
+	color:#fff;
+	padding:15px 50px;
+	text-align:center;
+	}
+	   
+	   
+	   @media (max-width: 600px){        
+
+	header {
+	 width: 100%;
+	 height: 100%;
+	 padding: 0;
+	 text-align: center;
+	}
+	.logo {
+	 width: 100%;
+	 float: none;
+	}
+	nav {
+	 width: 100%;
+	 float: none;
+	}
+	nav ul li {
+	 display: block;
+	}
+	nav ul {
+	 float: none;
+	}
+	   }    
+
+	.caja1 {
+  border: 10px solid #3EC483;
+  background: #5DEAA8;
+  width: 100%;
+  height: auto;
+  padding: 10px;
+  margin: 10px;
+}
+
+
+	.caja2 {
+  border: 10px solid #FFD803;
+  background: #FEF6E4;
+  width: 100%;
+  height: auto;
+  padding: 10px;
+  margin: 10px;
+}
+	.caja3 {
+  border: 10px solid #8BD3DD;
+  background: #F3D2C1;
+  width: 100%;
+  height: auto;
+  padding: 10px;
+  margin: 10px;
+}
+	</style>
+</head>
+<body>
+	<header>
+		<div class="logo">
+			SteamLite
+		</div>
+		<nav>
+			<ul>
+				<li>
+					<a href="Pagina_Datos.html">Home</a>
+				</li>
+				<li>
+					<a href="About.html">About</a>
+				</li>
+				<li>
+					<a href="Basic.html">Basic</a>
+				</li>
+				<li>
+					<a href="Intermediate.html">Intermediate</a>
+				</li>
+				<li>
+					<a href="Advance.html">Advance</a>
+				</li>
+			</ul>
+		</nav>
+	</header>
+	<div class="banner"><img alt="" src="Intermediate.jpg"></div>
+	<br> <br>
+	<div class="pointer" align="center">
+		<h1>Intermediate_Concepts:</h1>
+	</div>
+	<div class="content">
+		<p>En esta seccion podra encontrar los distintos metodos y conocimientos de nivel intermedio y con estos poder manipular las consultas de determinada manera, por lo que vera en esta seccion sera en relacion con JOINS y con FUNCIONES, las cuales le permitiran hacer mas facil consultas de su interes. </p>
+		<p>Tambien le quisieramos mostrarle graficas en las cuales le permitira comprender de manera mas sencilla que es lo que se esta ejecutando. Dichas graficas van a estar elaboradas por medio del lenguaje de programacion de Python y por medio de la libreria Plotly se generara el grafico.</p>
+		<p>Quisieramos que al final de esta seccion se pueda elaborar consultas realizadas por medio de JOINS o invocando funciones con el fin de realizar consultas de interes propio de una manera mucho mas sencilla por medio de JOINS y FUNTION.</p>
+
+	<div class="caja2">
+		<h1>JOINS:</h1>
+		<div align="center"><img alt="" src="join.png" align="center" alt="" width="800" height="500"></div>
+		<p>La sentencia JOIN (unir, combinar) en SQL  es una funcion la cual nos permite combinar registros de una o más tablas dentro de una base de datos. Dentro del lenguaje SQL podemos encontrar tres tipos de JOins: interno, externo y cruzado. Sin embargo el estándar ANSI del SQL especifica cinco tipos de JOIN: INNER, LEFT OUTER, RIGHT OUTER, FULL OUTER y CROSS. Donde vemos que con estos, vemos que una tabla puede unirse a sí misma, produciendo una auto-combinación, SELF-JOIN. O podemos aplicar in INNER JOIN para obtener una tabla cullo producto sea en donde de dos tablas se seleccionan los elementos de ambas tablas en donde tengan un valor en comun dentro de uno de los campos. </p>
+		<p>La estructura de los JOINS se puede encontrar de la manera como se halla en la imagen de la parte superior, en donde vemos que inicialmente se selecciona una tabla por medio de la funcion SELECT, aplican las condiciones respectivas y luego se selecciona el tipo de JOIN junto con la otra tabla seleccionada de manera similar.</p>
+		<p>En el siguiente ejemplo podremos ver aquellos juegos cuyo ID sea el mismo que el de alguno de los usuarios:</p>
+		<p>SELECT * from clientes Inner JOIN juegos ON clientes.ID=juegos.ID;</p>
+
+		<div style="text-align: center;">
+ 				<img alt="" width="800px" height="450px" src="2.1.png" align="center" align="left" />
+		</div>
+
+		<p>O podremos asignales a todos los desarrolladores los mismos juegos:</p>
+		<p>SELECT * from desarrolladores Cross JOIN juegos;</p>
+
+ 		
+ 		
+ 		<p>Consideramos que con los ejemplos se puede ver como es que debe de ser el uso de los JOINS mostrandolos de manera sencilla y especificando la funcion que cumplen dentro de las selecciones que estamos realizando.</p>
+	</div>
+
+
+	<div class="caja1">
+		<h1>FUNTION and PROCEDURE:</h1>
+		<p>Una funcion es una función definida por el usuario la cual vemos que acepta ciertos parámetros y con estos realiza una acción, como un cálculo complejo que podria devuelvernos el resultado de esa acción como un valor. El valor de retorno puede ser un valor escalar (único) o una tabla. Donde vemos que este puede ser utilizado con las siguientes formas:</p>
+		<h3>1.En instrucciones Transact-SQL como SELECT.</h3>
+		<h3>2.Para definir una columna en una tabla.</h3>
+		<h3>3.Para definir una restricción CHECK en una columna.</h3>
+		<h3>4.Para reemplazar un procedimiento almacenado.</h3>
+		<br>
+		<p>En el siguiente ejemplo veremos como actualizar la tabla de ofertas, borrando todas las ofertas mostradas:</p>
+		<p>Create or REPLACE PROCEDURE vaciar_tabla()</p>
+		<p>LANGUAGE 'plpgsql'</p>
+		<p>as $$</p>
+		<p>BEGIN</p>
+		<p>DELETE FROM Ofertas;</p>
+		<p>END;</p>
+		<p>$$;</p>
+		<p>Y para hacer uso de este procedimiento lo unico que debemos de hacer es usar el comando CALL vaciar_tabla()</p>
+		<p>Ahora para mostrar que son las funciones mostraremos como retornar una tabla de promedios de precio por categorias:</p>
+
+		<p>Create or REPLACE FUNCTION AVG_tabla()</p>
+		<p>RETURNS table(cat VARCHAR(90),promedio numeric(10,2))</p>
+ 		<p>LANGUAGE 'plpgsql'</p>
+		<p>as $$</p>
+		<p>BEGIN</p>
+		<p>RETURN QUERY</p> 
+		<p>SELECT categoria, AVG(precio) </p>
+		<p>from categoria_juegos INNER JOIN juegos</p> 
+		<p>ON categoria_juegos.id_juego =juegos.id</p>
+		<p>GROUP BY categoria;</p>
+		<p>END;</p>
+		<p>$$;</p>
+		<p>Y podremos invocar a este metodo utilizando un simple select:</p>
+		<p>SELECT * FROM  AVG_tabla()</p>
+
+		<div style="text-align: center;">
+ 				<img alt="" width="800px" height="450px" src="2.2.png" align="center" align="left" />
+		</div>
+
+	</div>
+
+
+	
+
+	<div class="caja3">
+			<h1>Ranking:</h1>
+			<p>La funcion para rankear nos ayuda a visualizar por puestos los datos que quisieramos manipular. Con el siguiente ejemplo quisieramos mostrar los juegos que son mas jugados y clasificarlos por un rankeamiento.</p>
+			<p>SELECT ID_juego, sum(extract (hour from(hora_final - hora_inicio))) as playtime, rank() over(order by sum(extract (hour from(hora_final - hora_inicio))) DESC)
+from jugando where hora_inicio BETWEEN now()- Interval '7 day' and now() Group by ID_juego;</p>
+
+		<div style="text-align: center;">
+ 				<img alt="" width="800px" height="450px" src="2.3.png" align="center" align="left" />
+		</div>
+	</div>
+	</div>
+	<footer>
+		<p>All Right Reserved By SteamLite</p>
+	</footer>
+</body>
+</html>
